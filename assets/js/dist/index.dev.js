@@ -1,6 +1,8 @@
 "use strict";
 
-// overlay 
+//  scrollTrigger register 
+gsap.registerPlugin(ScrollTrigger); // overlay 
+
 gsap.to(".overlay h1", {
   duration: 2,
   opacity: 0,
@@ -66,7 +68,56 @@ gsap.from('.home_scroll', {
   delay: 1.5,
   y: 100,
   ease: Expo.easeInOut
-}); // TweenMax.from(".container_right", 2, {
+});
+gsap.from(".vision_container", {
+  y: 30,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".vision_container",
+    start: "top 80%",
+    end: "center 15%",
+    // markers: true,
+    toggleActions: "play reverse restart reverse"
+  }
+});
+gsap.from(".footer_container", {
+  y: 100,
+  opacity: 0,
+  duration: 2,
+  scrollTrigger: {
+    trigger: ".footer_container",
+    start: "top 90%",
+    // end: "center 15%",
+    // markers: true,
+    toggleActions: "play reverse restart reverse"
+  }
+});
+gsap.from(".footer_copy", {
+  // y: 100,
+  opacity: 0,
+  duration: 3,
+  scrollTrigger: {
+    trigger: ".footer_container",
+    start: "top bottom",
+    // end: "center 15%",
+    // markers: true,
+    toggleActions: "play reverse restart reverse"
+  }
+}); // let tlvision = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".vision",
+//         start: "top bottom",
+//         on
+//     }
+// })
+// tlvision.from(".vision", {
+//     y: 200,
+//     opacity: 0,
+//     duration: 2,
+//     ease: Expo.easeInOut
+// })
+// TweenMax.from(".container_right", 2, {
 //     delay: 2,
 //     width: "0",
 //     opacity: "0",

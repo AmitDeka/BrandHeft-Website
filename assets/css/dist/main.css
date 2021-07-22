@@ -539,7 +539,7 @@ img {
   row-gap: 2rem;
 }
 .footer_content {
-  margin: 10px;
+  margin: 5px;
 }
 @media (min-width: 768px) {
   .footer_content {
@@ -599,6 +599,26 @@ img {
 }
 .footer_link:hover {
   color: #002642;
+}
+.footer .address li {
+  display: flex;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .footer .address li {
+    margin-bottom: 15px;
+  }
+}
+.footer .address-icon {
+  position: relative;
+  font-size: 1.2rem;
+  color: #002642;
+  margin-right: 6px;
+}
+@media (min-width: 768px) {
+  .footer .address-icon {
+    margin-right: 8px;
+  }
 }
 .footer_copy {
   text-align: center;

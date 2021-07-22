@@ -619,10 +619,10 @@ img{
         row-gap: 2rem;
     }
     &_content{
-        margin: 10px;
+        margin: 5px;
+        
         @include media('>=tablet'){
-            margin: 20px;
-            
+            margin: 20px;   
         }
     }
 
@@ -680,6 +680,29 @@ img{
             color: $color-dark-alt;
         }
     }
+
+    .address{
+
+        li{
+            display: flex;
+            margin-bottom: 10px;
+            @include media('>=tablet'){
+               margin-bottom: 15px;   
+            }
+        }
+
+        &-icon{
+            position: relative;
+            font-size: 1.2rem;
+            color: $color-dark-alt;
+            margin-right: 6px;
+            
+            @include media('>=tablet'){
+                margin-right: 8px;
+            }
+        }
+    }
+
     &_copy{
         text-align: center;
         font-size: .8rem;
