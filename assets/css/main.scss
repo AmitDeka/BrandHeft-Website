@@ -312,7 +312,7 @@ img{
 }
 
 .bd_container{
-    max-width: 90%;
+    max-width: 85%;
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -336,12 +336,32 @@ img{
 //     scroll-snap-type: y mandatory;
 // }
 
-section{
-    width: 100%;
-    // margin-top: $header-height;
-    // height: 100vh;
-    height: calc(100vh - $header-height);
+.section{
+    margin-top: $header-height;
+    padding: 4rem 0 2rem;
     
+    &_title,
+    &_subtitle{
+        text-align: center;
+    }
+
+    &_title{
+        font-size: 1.5rem;
+        color: $color-dark;
+        margin-bottom: 1.5rem;
+    }
+
+    &_subtitle{
+        display: block;
+        color: $color-dark-alt;
+        font-weight: 400;
+        margin-bottom: .5rem;
+    }
+
+    @include media('>=tablet'){
+        padding-top: 8rem;
+    }
+
 }
 
 .home{
@@ -545,65 +565,179 @@ section{
 .show_scroll{
     bottom: 2rem;
 }
-.about{
-    // width: 100%;
-    // // margin-top: $header-height;
-    // padding-top: $header-height;
-    // // height: 100vh;
-    // height: calc(100vh - $header-height);
-}
 
-footer{
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 2.5rem 5rem;
-    color: $color-light;
-    background-color: $color-dark-alt;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-    
+.vision{
+
     &_container{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: row;
+        row-gap: 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-        .sec{
-            margin-right: 30px;
+        @include media('>=tablet'){
+            margin-top: 3rem;
+            // grid-template-columns:  1fr 1fr 1fr;
         }
-
-        .aboutus{
-            width: 40%;
-            
-        }    
     }
 
-    & h2{
-        font-family: $font-primary;
-        position: relative;
+    &_content{
+        text-align: center;
+        // border: 2px solid $color-dark;
+    }
+
+    &_image{
+        width: 100px;
+        height: 100px;
+        // fill: #ff00ff;
+        margin-bottom: 1rem;
+        @include media('>=tablet'){
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    &_title{
+        font-size: 1.2rem;
+        color: $color-dark;
+        margin-bottom: 1rem;
+        @include media('>=tablet'){
+            font-size: 1.5rem;
+        }
+    }
+
+    &_desc{
+        font-size: .9rem;
+        padding: 0 1.5rem;
+        @include media('>=tablet'){
+            font-size: 1rem;
+        }
+    }
+}
+
+.footer{
+
+    &_container{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        row-gap: 2rem;
+    }
+    &_content{
+        margin: 10px;
+        @include media('>=tablet'){
+            margin: 20px;
+            
+        }
+    }
+
+    &_logo{
+        font-size: 1.5rem;
+        color: $color-dark;
         font-weight: 600;
-        color: $color-light;
+        & span{
+            color: $color-dark-alt;
+        }
+
+        @include media('>=tablet'){
+            font-size: 2.5rem;
+        }
+    }
+
+    &_desc{
+        display: block;
+        font-size: .9rem;
+        margin: .25rem 0 1.5rem;
+        @include media('>=tablet'){
+            font-size: .9rem;
+        }
+    }
+
+    &_social{
+        font-size: 1.2rem;
+        color: $color-dark-alt;
+        margin-right: 1rem;
+
+        &:hover{
+            fill: #122112;
+        }
+        @include media('>=tablet'){
+            font-size: 1.5rem;
+        }
+    }
+
+    &_title{
+        font-size: 1.2rem;
+        color: $color-dark-alt;
         margin-bottom: 1rem;
 
-        &::before{
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: $color-yellow;
+        @include media('>=tablet'){
+            font-size: 1.5rem;
         }
     }
 
-    & p{
-        color: $color-light;
-    }
+    &_link{
+        display: inline-block;
+        color: $color-dark;
+        margin-bottom: .5rem;
 
+        &:hover{
+            color: $color-dark-alt;
+        }
+    }
+    &_copy{
+        text-align: center;
+        font-size: .8rem;
+        color: $color-dark-alt;
+        margin-top: 3rem;
+    }
 }
+// footer{
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     padding: 2.5rem 5rem;
+//     color: $color-light;
+//     background-color: $color-dark-alt;
+//     display: flex;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+    
+    
+//     &_container{
+//         display: flex;
+//         justify-content: space-between;
+//         flex-wrap: wrap;
+//         flex-direction: row;
+
+//         .sec{
+//             margin-right: 30px;
+//         }
+
+//         .aboutus{
+//             width: 40%;
+            
+//         }    
+//     }
+
+//     & h2{
+//         font-family: $font-primary;
+//         position: relative;
+//         font-weight: 600;
+//         color: $color-light;
+//         margin-bottom: 1rem;
+
+//         &::before{
+//             content: '';
+//             position: absolute;
+//             bottom: -5px;
+//             left: 0;
+//             width: 50px;
+//             height: 2px;
+//             background-color: $color-yellow;
+//         }
+//     }
+
+//     & p{
+//         color: $color-light;
+//     }
+
+// }
 // test font 
 .aabb{
     background-color: antiquewhite;
