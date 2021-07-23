@@ -75,7 +75,7 @@ gsap.from(".vision_container", {
     duration: 1,
     scrollTrigger: {
         trigger: ".vision_container",
-        start: "top 80%",
+        start: "top 90%",
         end: "center 15%",
         // markers: true,
         toggleActions: "play reverse restart reverse"

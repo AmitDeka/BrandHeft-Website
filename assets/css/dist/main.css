@@ -19,10 +19,12 @@
     width: 0;
   }
 }
-*, ::before, ::after {
-  box-sizing: border-box;
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -30,12 +32,12 @@ html {
 }
 
 body {
-  margin: 4rem 0 0 0;
+  margin: 3rem 0 0 0;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #3d405b;
-  background-color: #fff;
+  background: linear-gradient(180deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
 }
 body::-webkit-scrollbar {
   width: 12px;
@@ -62,7 +64,14 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   color: #3d405b;
 }
 
@@ -118,6 +127,23 @@ img {
   }
 }
 
+.bd_container {
+  max-width: 1400px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+@media (min-width: 1400px) {
+  .bd_container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.bd_grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -125,9 +151,10 @@ img {
   left: 0;
   z-index: 50;
   background-color: transparent;
+  padding: 8px 0;
 }
 .header .nav {
-  height: 4rem;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,10 +168,10 @@ img {
   height: 50px;
   width: 50px;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   .header .nav_logo img {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
   }
 }
 .header .nav_menu {
@@ -236,61 +263,21 @@ img {
 .header .nav .show_menu {
   right: 0;
 }
-@media (min-width: 968px) {
-  .header {
-    padding: 5px 0;
-  }
-}
 
-.bd_container {
-  max-width: 85%;
-  width: calc(100% - 3rem);
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-@media (min-width: 968px) {
-  .bd_container {
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-.bd_grid {
-  display: grid;
-  gap: 1.5rem;
+.scroll_header {
+  background-color: #fff;
+  transition: 0.2s all ease-in;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .l-main {
   overflow: hidden;
 }
 
-.section {
-  margin-top: 4rem;
-  padding: 4rem 0 2rem;
-}
-.section_title, .section_subtitle {
-  text-align: center;
-}
-.section_title {
-  font-size: 1.5rem;
-  color: #3d405b;
-  margin-bottom: 1.5rem;
-}
-.section_subtitle {
-  display: block;
-  color: #002642;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-}
-@media (min-width: 768px) {
-  .section {
-    padding-top: 8rem;
-  }
-}
-
 .home {
+  height: 100vh;
   width: 100%;
-  height: calc(100vh - $header-height);
+  row-gap: 1.5rem;
 }
 .home_container {
   row-gap: 0.5rem;
@@ -313,8 +300,8 @@ img {
   }
 }
 .home_image {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   justify-self: center;
 }
 @media (max-width: 360px) {
@@ -366,44 +353,14 @@ img {
     font-size: 1.2rem;
   }
 }
-.home_social {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  row-gap: 1.5rem;
-  margin-top: 50px;
-}
-.home_social-icon {
-  font-size: 1.3rem;
-  width: max-content;
-  color: #002642;
-}
-.home_social-icon:hover {
-  color: #3d405b;
-}
-@media (min-width: 768px) {
-  .home_social {
-    flex-direction: column;
-    align-items: flex-end;
-    margin-bottom: 3rem;
-    column-gap: 2.5rem;
-    margin-top: 0;
-  }
-  .home_social-icon {
-    font-size: 1.5rem;
-  }
-}
 .home_scroll {
-  left: 50%;
-  margin-top: 2.5rem;
-  position: relative;
+  bottom: 0;
   text-align: center;
-  transform: translate(-50%);
-  bottom: 2%;
+  align-self: center;
 }
 .home_scroll-text {
   display: block;
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin-bottom: 0.1rem;
 }
 .home_scroll-icon {
@@ -461,11 +418,27 @@ img {
   }
 }
 
-.scroll_header {
-  background-color: #fff;
-  padding: 5px 0 0 0;
-  transition: 0.2s all ease-in;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
+.section {
+  padding: 4rem 0 2rem;
+}
+.section_title, .section_subtitle {
+  text-align: center;
+}
+.section_title {
+  font-size: 1.5rem;
+  color: #3d405b;
+  margin-bottom: 1.5rem;
+}
+.section_subtitle {
+  display: block;
+  color: #002642;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 8rem;
+  }
 }
 
 .scroll_top {
