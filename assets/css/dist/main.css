@@ -25,6 +25,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 html {
@@ -572,6 +574,7 @@ img {
   bottom: 1rem;
 }
 .team .card_social i {
+  cursor: pointer;
   font-size: 1.4rem;
   margin: 5px;
 }
